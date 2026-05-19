@@ -1,5 +1,6 @@
 using UnityEngine;
 
+
 public class ObstacleMovement : MonoBehaviour
 {
     public float speed = 3f;
@@ -11,4 +12,5 @@ public class ObstacleMovement : MonoBehaviour
         if (transform.position.y < -6f)
             Destroy(gameObject);
     }
+
 }
