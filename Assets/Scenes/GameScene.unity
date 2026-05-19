@@ -226,7 +226,7 @@ GameObject:
   - component: {fileID: 651222444}
   - component: {fileID: 651222443}
   - component: {fileID: 651222442}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Firefly2
   m_TagString: Firefly
   m_Icon: {fileID: 0}
@@ -280,8 +280,8 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 2
+  m_Mass: 30
+  m_LinearDrag: 1
   m_AngularDrag: 0.5
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -294,7 +294,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 0
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 2
 --- !u!212 &651222444
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -356,13 +356,13 @@ Transform:
   m_GameObject: {fileID: 651222441}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.04, y: -1.99, z: 0}
+  m_LocalPosition: {x: 5.04, y: 0.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1708802384
+--- !u!1 &776058659
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -370,54 +370,57 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1708802386}
-  - component: {fileID: 1708802385}
-  - component: {fileID: 1708802387}
+  - component: {fileID: 776058661}
+  - component: {fileID: 776058660}
+  - component: {fileID: 776058662}
   m_Layer: 0
-  m_Name: RopeController
+  m_Name: RopeManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1708802385
+--- !u!114 &776058660
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1708802384}
+  m_GameObject: {fileID: 776058659}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97a1e50d50540fb478a1ddc333706274, type: 3}
+  m_Script: {fileID: 11500000, guid: 4097f03d453555847a3220430f87ff66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firefly1: {fileID: 1862892265}
-  firefly2: {fileID: 651222445}
-  sag: 1.5
---- !u!4 &1708802386
+  firefly1: {fileID: 1862892263}
+  firefly2: {fileID: 651222443}
+  segmentPrefab: {fileID: 6526496215023523466, guid: cd9e8cca09fdfd44dbce4083a4bc58d1, type: 3}
+  segmentCount: 20
+  ropeVisualizer: {fileID: 776058662}
+  isRopeActive: 1
+--- !u!4 &776058661
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1708802384}
+  m_GameObject: {fileID: 776058659}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.21991402, y: 0.14382578, z: 0.75080854}
+  m_LocalPosition: {x: 1.9204891, y: -0.40692765, z: 0.78061366}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!120 &1708802387
+--- !u!120 &776058662
 LineRenderer:
   serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1708802384}
+  m_GameObject: {fileID: 776058659}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -431,7 +434,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -457,7 +460,7 @@ LineRenderer:
   - {x: 0, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.1
+    widthMultiplier: 0.05
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -475,7 +478,7 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
+      key0: {r: 0.95294124, g: 0.95294124, b: 0.95294124, a: 1}
       key1: {r: 1, g: 1, b: 1, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
@@ -500,11 +503,11 @@ LineRenderer:
       atime6: 0
       atime7: 0
       m_Mode: 0
-      m_ColorSpace: -1
+      m_ColorSpace: 0
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
-    numCornerVertices: 0
-    numCapVertices: 0
+    numCornerVertices: 10
+    numCapVertices: 10
     alignment: 0
     textureMode: 0
     textureScale: {x: 1, y: 1}
@@ -528,7 +531,7 @@ GameObject:
   - component: {fileID: 1862892263}
   - component: {fileID: 1862892262}
   - component: {fileID: 1862892261}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Firefly1
   m_TagString: Firefly
   m_Icon: {fileID: 0}
@@ -603,8 +606,8 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 2
+  m_Mass: 30
+  m_LinearDrag: 1
   m_AngularDrag: 0.5
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -617,7 +620,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 0
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 2
 --- !u!212 &1862892264
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -679,7 +682,7 @@ Transform:
   m_GameObject: {fileID: 1862892260}
   serializedVersion: 2
   m_LocalRotation: {x: 0.044479, y: -0, z: -0, w: 0.9990103}
-  m_LocalPosition: {x: -5.05, y: -1.99, z: 0}
+  m_LocalPosition: {x: -5.05, y: 0.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -697,7 +700,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b547b792c98f844b2c91f474d198e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connectionLine: {fileID: 1708802385}
+  ropeManager: {fileID: 776058660}
 --- !u!1 &2123014482
 GameObject:
   m_ObjectHideFlags: 0
@@ -776,4 +779,4 @@ SceneRoots:
   - {fileID: 1862892265}
   - {fileID: 651222445}
   - {fileID: 2123014483}
-  - {fileID: 1708802386}
+  - {fileID: 776058661}

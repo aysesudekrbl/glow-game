@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Firefly
+  - Rope
   layers:
   - Default
   - TransparentFX
@@ -12,9 +13,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Rope
+  - Firefly
+  - Obstacle
   - 
   - 
   - 
