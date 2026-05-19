@@ -170,5 +170,5 @@ Packages/packages-lock.json linguist-generated
 # Exceptions for .asset files such as lightning pre-baking
 LightingData.asset     binary
 
-*.shader linguist-generated=true
-*.hlsl linguist-generated=true
+*.shader linguist-vendored
+*.hlsl linguist-vendored
