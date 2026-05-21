@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 0.87022114, b: 0, a: 1}
+  m_Color: {r: 0.9245283, g: 0.8750902, b: 0.54250616, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c53a194e3a7d1341a279d69b21431f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collectSound: {fileID: 8300000, guid: ce5b6ba059d0baf42be3839152308dd0, type: 3}
 --- !u!114 &5082020295194632577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,6 +173,6 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.042888254, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1.252492
