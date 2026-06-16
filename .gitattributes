@@ -172,3 +172,4 @@ LightingData.asset     binary
 
 *.shader linguist-vendored
 *.hlsl linguist-vendored
+*.hlsl linguist-detectable=false
