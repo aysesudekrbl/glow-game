@@ -103,7 +103,7 @@ public class RopeManager : MonoBehaviour
         foreach (Rigidbody2D rb in segments)
         {
             rb.gameObject.SetActive(true);
-            rb.velocity = Vector2.zero; // Uyandığında sapıtmaması için eski fiziksel hızını sıfırla
+            rb.linearVelocity = Vector2.zero; // Uyandığında sapıtmaması için eski fiziksel hızını sıfırla
         }
 
         endJoint.enabled = true; // Bağı geri tak

@@ -13,7 +13,7 @@ public class ObstacleMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        rb.velocity = new Vector2(0, -speed);
+        rb.linearVelocity = new Vector2(0, -speed);
     }
 
     void Update()
